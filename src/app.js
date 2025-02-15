@@ -14,12 +14,13 @@ if (!pathToFile || !pathToReplace) {
     console.error('This is a similar path.');
   }
 
-  fs.cp(pathToFile, pathToReplace, (error) => {
+  fs.copyFile(pathToFile, pathToReplace, (error) => {
     if (error) {
       // eslint-disable-next-line no-console
       console.error('Copy Error');
     } else {
-      return 'The file has been copied';
+      // eslint-disable-next-line no-console
+      return console.log('The file has been copied');
     }
   });
 }
